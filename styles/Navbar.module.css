@@ -1,0 +1,85 @@
+.Navbar {
+	width: 100%;
+	position: sticky;
+	top: 0;
+	height: 3.5rem;
+	display: flex;
+	align-items: center;
+	background: var(--white);
+	z-index: 10;
+}
+.LogoImage {
+	transition: all 0.2s ease-in-out;
+}
+
+.LogoImage:hover {
+	transform: scale(1.5);
+	margin-top: 20px;
+}
+
+.Navbar header {
+	margin-top: 10px;
+	width: 97vw;
+	margin: 0 auto;
+}
+
+.Navbar header section {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Toggle {
+	font-size: 2rem;
+	background: transparent;
+	border-color: transparent;
+	color: var(--black);
+	cursor: pointer;
+	transition: var(--transition);
+}
+
+.Toggle:hover {
+	color: var(--primary-200);
+}
+
+.Links {
+	display: none;
+}
+
+@media screen and (min-width: 768px) {
+	.Toggle {
+		display: none;
+	}
+	.Links {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.Links a {
+		margin-right: 1.5rem;
+		text-transform: capitalize;
+		color: var(--black);
+		font-weight: bold;
+		letter-spacing: var(--letterSpacing);
+		transition: var(--transition);
+		padding: 0.8712rem 0;
+	}
+
+	.Links a:hover {
+		border-bottom: 4px solid var(--black);
+	}
+
+	.Navbar header {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		align-items: center;
+	}
+
+	.Logo {
+		display: flex;
+		gap: 5px;
+		padding: 10px;
+		justify-content: center;
+		align-items: center;
+	}
+}
