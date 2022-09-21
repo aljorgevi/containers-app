@@ -19,9 +19,19 @@ export default function Home({ images }) {
 
 export async function getStaticProps() {
 	const res = await client.getEntries({ content_type: 'containers' });
-	return {
-		props: {
-			images: res.items
-		}
-	};
+
+	const images = res.items.map(img => {
+		const { sys, fields } = img;
+		const { image, title } = fields;
+		const { fields: imgFields } = image;
+
+		return {
+			url: imgFields.file.url,
+			id: sys.id,
+			title,
+			description: 'asdasdasda'
+		};
+	});
+
+	return { props: { images } };
 }
