@@ -350,9 +350,8 @@ ul {
 
 .social-links {
 	margin-top: 2rem;
-	width: 5rem;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 }
 .social-link {
 	font-size: 1.75rem;
@@ -396,7 +395,7 @@ Sidebar
 	color: var(--black);
 	letter-spacing: var(--letterSpacing);
 	margin-bottom: 0.5rem;
-	font-size: 2rem;
+	font-size: 1.8rem;
 	transition: var(--transition);
 	border-radius: var(--borderRadius);
 }
