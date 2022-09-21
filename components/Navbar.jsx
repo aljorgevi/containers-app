@@ -3,7 +3,7 @@ import Links from './Links';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Navbar.module.css';
-// import logo from '../public/logo2.png';
+import logo from '../public/logo-removebg-preview.png';
 
 const Navbar = ({ toggleSidebar }) => {
 	return (
@@ -13,14 +13,13 @@ const Navbar = ({ toggleSidebar }) => {
 					<div className={styles.Logo}>
 						<Link href='/'>
 							<a className={styles.LogoImage}>
-								{/* <Image
+								<Image
 									src={logo}
 									alt='image jorge'
-									width={36}
-									height={36}
-									style={{ borderRadius: '50%' }}
-								/> */}
-								Logo
+									width={100}
+									height={100}
+									objectFit='contain'
+								/>
 							</a>
 						</Link>
 					</div>
