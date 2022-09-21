@@ -1,0 +1,43 @@
+.Hero {
+	text-align: center;
+	height: 100vh;
+	background-color: #333;
+}
+
+.HeroContainer {
+	height: 100%;
+	position: relative;
+}
+
+.HeroDescripion {
+	width: 600px;
+	position: absolute;
+	z-index: 999;
+	color: var(--white);
+	top: 20%;
+	left: 10%;
+}
+
+.HeroDescripion h1 {
+	font-size: 46px;
+}
+
+.HeroDescripion {
+	font-size: 22px;
+}
+
+.HeroCarousel {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.HeroCarousel span {
+	width: 45px;
+	height: 12px;
+	background-color: bisque;
+	margin-left: 10px;
+	border-radius: 10px;
+	cursor: pointer;
+	box-shadow: 3px 2px 2px rgba(73, 72, 72, 0.338);
+}
