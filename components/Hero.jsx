@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from '../styles/Hero.module.css';
 
 export default function Hero({ images }) {
+	console.log('*', { images });
 	const [slide, setSlide] = useState(0);
 
 	const goToNext = index => {
@@ -29,16 +30,17 @@ export default function Hero({ images }) {
 						height: '100%'
 					}}
 				></div>
-				<div className={styles.HeroDescripion}>
-					<div>
-						<h1>{images[slide].title}</h1>
-						<p>{images[slide].description}</p>
-					</div>
-					<div className={styles.HeroCarousel}>
-						{images.map((img, index) => {
+				<div>
+					{/* <div className={styles.HeroDescripion}>
+						<span className={styles.HeroDescripionTitle}>
+							{images[slide].title}
+						</span>
+					</div> */}
+					{/* <div className={styles.HeroCarousel}>
+					{images.map((img, index) => {
 							return <span key={img.id} onClick={() => goToNext(index)}></span>;
 						})}
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</section>
