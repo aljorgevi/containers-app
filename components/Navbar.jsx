@@ -7,34 +7,36 @@ import logo from '../public/logo-removebg-preview.png';
 
 const Navbar = ({ toggleSidebar }) => {
 	return (
-		<nav className={styles.Navbar}>
-			<header>
-				<section>
-					<div className={styles.Logo}>
-						<Link href='/'>
-							<a className={styles.LogoImage}>
-								<Image
-									src={logo}
-									alt='image jorge'
-									width={100}
-									height={100}
-									objectFit='contain'
-								/>
-							</a>
-						</Link>
-					</div>
+		<div className='section-center'>
+			<nav className={styles.Navbar}>
+				<header>
+					<section>
+						<div className={styles.Logo}>
+							<Link href='/'>
+								<a className={styles.LogoImage}>
+									<Image
+										src={logo}
+										alt='image jorge'
+										width={100}
+										height={100}
+										objectFit='contain'
+									/>
+								</a>
+							</Link>
+						</div>
 
-					<button
-						type='button'
-						className={styles.Toggle}
-						onClick={toggleSidebar}
-					>
-						<FaAlignRight />
-					</button>
-				</section>
-				<Links styleClass={styles.Links} />
-			</header>
-		</nav>
+						<button
+							type='button'
+							className={styles.Toggle}
+							onClick={toggleSidebar}
+						>
+							<FaAlignRight />
+						</button>
+					</section>
+					<Links styleClass={styles.Links} />
+				</header>
+			</nav>
+		</div>
 	);
 };
 
