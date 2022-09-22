@@ -10,23 +10,31 @@
 }
 
 .HeroDescripion {
-	width: 50%;
+	/* width: 50%; */
 	position: absolute;
 	z-index: 10;
 	color: var(--white);
-	top: 30%;
+	top: 95%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
 
-.HeroDescripion h1 {
-	/* font-size: 46px; */
-	font-size: 2rem;
+.HeroDescripionTitle {
+	padding: 2px 10px;
+	font-family: 'Poppins';
+	text-transform: uppercase;
+	font-weight: 300;
+	font-style: normal;
+	letter-spacing: normal;
+	line-height: 35px;
+	font-size: 1rem;
+	z-index: 999;
+	background-color: rgba(75, 88, 49, 0.5);
+	max-width: 200px;
 }
 
-.HeroDescripion {
-	/* font-size: 22px; */
-	font-size: 1.2rem;
+.HeroDescripionTitle div {
+	color: var(--primary-500);
 }
 
 .HeroCarousel {
@@ -45,25 +53,11 @@
 	box-shadow: 3px 2px 2px rgba(73, 72, 72, 0.338);
 }
 
-@media screen and (min-width: 768px) {
-	.HeroDescripion {
-		font-size: 1.4rem;
-		top: 20%;
-		left: 10%;
-		transform: none;
-	}
-
+/* @media screen and (min-width: 768px) {
 	.HeroDescripion h1 {
-		font-size: 2rem;
+		font-size: 1.5rem;
 	}
 }
 
 @media screen and (min-width: 992px) {
-	.HeroDescripion {
-		font-size: 1.5rem;
-	}
-
-	.HeroDescripion h1 {
-		font-size: 3rem;
-	}
-}
+} */
