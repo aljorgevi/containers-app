@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Footer from './Footer';
 // import { motion } from "framer-motion"
 // import { pageAnimation3 } from "../utils/animations"
 import Navbar from './Navbar';
@@ -21,6 +22,7 @@ const Layout = ({ children }) => {
 			>
 				{children}
 			</main>
+			<Footer />
 		</>
 	);
 };
