@@ -5,7 +5,7 @@
 }
 /* fonts */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300&display=swap');
 
 :root {
 	/* colors */
@@ -15,7 +15,7 @@
 	--primary-200: #6ddbff;
 	--primary-300: #59d5ff;
 	--primary-400: #44d0ff;
-	--primary-500: #2fcbff;
+	--primary-500: #fdda1e;
 	--primary-600: #2ab7e6;
 	--primary-700: #26a2cc;
 	--primary-800: #218eb3;
