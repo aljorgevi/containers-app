@@ -1,11 +1,6 @@
-import Layout from '../components/Layout';
-import { createClient } from 'contentful';
-import Hero from '../components/Hero';
-
-const client = createClient({
-	space: process.env.CONTENTFUL_SPACE_ID,
-	accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-});
+import Layout from '../src/components/Layout';
+import Hero from '../src/components/Hero';
+import { client } from '../src/config/contenful';
 
 export default function Home({ images }) {
 	return (
@@ -19,7 +14,6 @@ export default function Home({ images }) {
 
 export async function getStaticProps() {
 	const res = await client.getEntries({ content_type: 'containers' });
-	console.log({ res });
 
 	const images = res.items.map(img => {
 		const { sys, fields } = img;

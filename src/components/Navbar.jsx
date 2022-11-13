@@ -2,8 +2,8 @@ import { FaAlignRight } from 'react-icons/fa';
 import Links from './Links';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '../styles/Navbar.module.css';
-import logo from '../public/logo-removebg-preview.png';
+import styles from '../../styles/Navbar.module.css';
+import logo from '../../public/logo-removebg-preview.png';
 
 const Navbar = ({ toggleSidebar }) => {
 	return (
