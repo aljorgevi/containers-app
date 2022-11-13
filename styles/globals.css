@@ -9,17 +9,15 @@
 
 :root {
 	/* colors */
-	--primary-10: #c1efff;
-	--primary-50: #97e5ff;
-	--primary-100: #82e0ff;
-	--primary-200: #6ddbff;
-	--primary-300: #59d5ff;
-	--primary-400: #44d0ff;
-	--primary-500: #fdda1e;
-	--primary-600: #2ab7e6;
-	--primary-700: #26a2cc;
-	--primary-800: #218eb3;
-	--primary-900: #1c7a99;
+	--primary-100: #fff8d2;
+	--primary-200: #fff0a5;
+	--primary-300: #ffe979;
+	--primary-400: #ffe14c;
+	--primary-500: #ffda1f;
+	--primary-600: #ccae19;
+	--primary-700: #998313;
+	--primary-800: #66570c;
+	--primary-900: #332c06;
 
 	/* grey */
 	--grey-50: #f8fafc;
@@ -32,9 +30,11 @@
 	--grey-700: #334155;
 	--grey-800: #1e293b;
 	--grey-900: #0f172a;
+	--grey-1000: #3a3a3a;
 	/* rest of the colors */
 	--black: #1d1d1d;
 	--white: #fff;
+	--text-white: rgb(255, 255, 255);
 	--red-light: #f8d7da;
 	--red-dark: #842029;
 	--green-light: #d1e7dd;
@@ -214,8 +214,11 @@ ul {
 
 .section-fluid {
 	width: 100%;
-	margin: 0 auto;
+}
+
+.max-width-responsive {
 	max-width: 1170px;
+	margin: 0 auto;
 }
 
 @media screen and (min-width: 992px) {
@@ -225,6 +228,10 @@ ul {
 }
 @media (min-width: 1400px) {
 	.section-center {
+		max-width: 1320px;
+	}
+
+	.max-width-responsive {
 		max-width: 1320px;
 	}
 }
