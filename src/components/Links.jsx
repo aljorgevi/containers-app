@@ -22,7 +22,7 @@ const Links = ({ styleClass, toggleSidebar }) => {
 				</Link>
 			</li>
 			<li>
-				<Link href='/' className='page-link'>
+				<Link href='/contacto' className='page-link'>
 					<a>Contacto</a>
 				</Link>
 			</li>
