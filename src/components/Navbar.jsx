@@ -7,7 +7,7 @@ import logo from '../../public/logo-removebg-preview.png';
 
 const Navbar = ({ toggleSidebar }) => {
 	return (
-		<div className='section-center'>
+		<div className='section-center navbar'>
 			<nav className={styles.Navbar}>
 				<header>
 					<section>
