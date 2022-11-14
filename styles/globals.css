@@ -356,10 +356,12 @@ ul {
 }
 
 .social-links {
-	margin-top: 2rem;
+	gap: 10px;
 	display: flex;
 	justify-content: center;
+	font-size: 1.35rem;
 }
+
 .social-link {
 	font-size: 1.75rem;
 	color: var(--grey-900);
@@ -832,3 +834,7 @@ Animation
 	right: auto;
 }
 /*  */
+
+.navbar {
+	padding: 5px 0;
+}
