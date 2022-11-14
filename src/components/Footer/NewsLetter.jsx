@@ -7,6 +7,7 @@ export default function NewsLetter() {
 		<Wrapper>
 			{/* TODO: change secondary theme to white */}
 			<TextField
+				sx={{ input: { color: 'white' } }}
 				className='input-sub'
 				color='secondary'
 				id='outlined-basic'
