@@ -63,7 +63,7 @@ const Wrapper = styled.footer`
 		}
 
 		p {
-			font-size: 13.5px;
+			font-size: calc((0.8 - 1) * 1.2vw + 1.2rem);
 		}
 	}
 
@@ -104,6 +104,10 @@ const Wrapper = styled.footer`
 	}
 
 	@media (min-width: 768px) {
+		p {
+			font-size: calc((0.8 - 1) * 1.2vw + 1rem) !important;
+		}
+
 		.center {
 			flex-direction: row;
 			padding: 70px 20px;
