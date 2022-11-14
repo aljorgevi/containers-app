@@ -3,7 +3,11 @@ import styles from './Button.module.css';
 
 export default function CustomButton({ children, className }) {
 	return (
-		<Button className={`${styles.Button} ${className}`} variant='outlined'>
+		<Button
+			color='primary'
+			className={`${styles.Button} ${className}`}
+			variant='outlined'
+		>
 			{children}
 		</Button>
 	);
