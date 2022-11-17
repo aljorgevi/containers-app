@@ -12,16 +12,20 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.10.13",
+    "@prisma/client": "^4.6.1",
     "contentful": "^9.2.4",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-google-recaptcha": "^2.1.0",
+    "react-hook-form": "^7.39.3",
     "react-icons": "^4.4.0",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^2.0.7",
     "eslint": "8.23.1",
-    "eslint-config-next": "12.3.1"
+    "eslint-config-next": "12.3.1",
+    "prisma": "^4.6.1"
   }
 }
