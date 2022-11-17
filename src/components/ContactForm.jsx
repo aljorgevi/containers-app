@@ -22,20 +22,24 @@ const ContactForm = ({ cars = [] }) => {
 	const [fetchError, setFetchError] = useState(null);
 
 	const onSubmit = (values, event) => {
+		console.log('🚀 ~ file: ContactForm.jsx ~ line 25 ~ onSubmit ~ values', {
+			values
+		});
 		event.preventDefault();
 		setIsLoading(true);
 		setFetchError(null);
 
-		if (!captchaRef.current.getValue()) {
-			setShowCapatchaError(true);
-			setIsLoading(false);
-			return;
-		}
+		// if (!captchaRef.current.getValue()) {
+		// 	setShowCapatchaError(true);
+		// 	setIsLoading(false);
+		// 	return;
+		// }]
 
 		setShowCapatchaError(false);
 
 		fetch('/api/mail', {
 			method: 'post',
+			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(values)
 		})
 			.then(() => {
@@ -68,14 +72,7 @@ const ContactForm = ({ cars = [] }) => {
 			{fetchError && <ErrorTextBlock />}
 			<article className='contact-form'>
 				<h3>contáctanos</h3>
-				<form
-					onSubmit={handleSubmit(onSubmit)}
-					data-netlify='true'
-					name='loki'
-					method='POST'
-					action='/success'
-					netlify-honeypot='bot-field'
-				>
+				<form onSubmit={handleSubmit(onSubmit)}>
 					<input type='hidden' name='bot-field' />
 					<input type='hidden' name='form-name' value='loki' />
 					<div className='form-group'>
@@ -83,8 +80,8 @@ const ContactForm = ({ cars = [] }) => {
 							className='form-control'
 							type='text'
 							placeholder='nombre'
-							name='user'
-							{...register('user', { required: true })}
+							name='name'
+							{...register('name', { required: true })}
 						/>
 						{errors.user && <p className='error'>Campo obligatorio</p>}
 						<input
