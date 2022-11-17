@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import ContactForm from '../src/components/ContactForm';
 import Layout from '../src/components/Layout';
 
 const urlImg =
@@ -16,6 +17,7 @@ export default function Contacto() {
 						height: '100%'
 					}}
 				/>
+				<ContactForm />
 				<div className='info' />
 			</Wrapper>
 		</Layout>
