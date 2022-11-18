@@ -16,7 +16,7 @@ export default async function handler(req, res) {
 			sendEmail(req, res)
 		]);
 
-		console.log('______RESPONSE_USER_AND_MAIL______ 🤡', {
+		console.log('📢 ______RESPONSE_USER_AND_MAIL______  📢', {
 			userResponse,
 			mailResponse
 		});
