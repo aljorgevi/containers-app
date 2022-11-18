@@ -6,6 +6,8 @@ BigInt.prototype.toJSON = function () {
 	return this.toString();
 };
 
+// TODO: send email
+
 export default async function handler(req, res) {
 	if (req.method === 'POST') {
 		return await addUser(req, res);

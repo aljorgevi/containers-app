@@ -22,9 +22,6 @@ const ContactForm = ({ cars = [] }) => {
 	const [fetchError, setFetchError] = useState(null);
 
 	const onSubmit = (values, event) => {
-		console.log('🚀 ~ file: ContactForm.jsx ~ line 25 ~ onSubmit ~ values', {
-			values
-		});
 		event.preventDefault();
 		setIsLoading(true);
 		setFetchError(null);
