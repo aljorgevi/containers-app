@@ -61,9 +61,7 @@ async function addUser(req, response) {
 	} catch (error) {
 		// TODO: where this log go? vercel logs?
 		console.log('db error 🧨', { error });
-		return response
-			.status(500)
-			.json({ error: 'Error  adding user', ok: false });
+		return { ok: false };
 	}
 }
 
@@ -81,9 +79,10 @@ async function sendEmail(req, response) {
 
 		// to: "contacto@lokicars.cl",
 		// to: "jormencar@yahoo.com",
+		// to: 'contact@aljorgevi.com',
 		const data = {
-			to: 'jormencar@yahoo.com',
-			from: 'contact@aljorgevi.com',
+			to: 'contacto@lokicars.cl',
+			from: 'contacto@lokicars.cl',
 			subject: `nuevo mensaje desde containers.cl!`,
 			text: payload,
 			html: payload.replace(/\r\n/g, '<br>')
@@ -96,6 +95,6 @@ async function sendEmail(req, response) {
 		return { ok: true };
 	} catch (error) {
 		console.log('email error 🚀', { error });
-		return response.status(500).json({ ok: false });
+		return { ok: false };
 	}
 }
