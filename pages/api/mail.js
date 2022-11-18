@@ -11,6 +11,7 @@ BigInt.prototype.toJSON = function () {
 
 export default async function handler(req, res) {
 	if (req.method === 'POST') {
+		// TODO: call both api at the same time
 		const userResponse = await addUser(req, res);
 		const mailResponse = await sendEmail(req, res);
 
