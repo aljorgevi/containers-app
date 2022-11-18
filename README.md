@@ -1,5 +1,7 @@
 TODO:
 
+- add eslint
+
 1. Create theme colours for button and input white border
 2. Add wsp
 3. Acerca: ventajas de trabajar con containers.
