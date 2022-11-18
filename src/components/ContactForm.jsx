@@ -7,7 +7,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { repatchaKey } from '../config/google';
 import { ErrorTextBlock } from './UI/ErrorTextBlock/ErrorTextBlock';
 
-const ContactForm = ({ cars = [] }) => {
+const ContactForm = () => {
 	const router = useRouter();
 
 	const {
@@ -16,12 +16,13 @@ const ContactForm = ({ cars = [] }) => {
 		formState: { errors },
 		reset
 	} = useForm();
+
 	const captchaRef = useRef(null);
 	const [showCapatchaError, setShowCapatchaError] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 	const [fetchError, setFetchError] = useState(null);
 
-	const onSubmit = (values, event) => {
+	const onSubmit = async (values, event) => {
 		event.preventDefault();
 		setIsLoading(true);
 		setFetchError(null);
@@ -34,20 +35,22 @@ const ContactForm = ({ cars = [] }) => {
 
 		setShowCapatchaError(false);
 
-		fetch('/api/mail', {
+		const formValuesJSON = JSON.stringify(values);
+
+		const res = await fetch('/api/mail', {
 			method: 'post',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify(values)
-		})
-			.then(() => {
-				router.push('/success');
-			})
-			.catch(() => {
-				setIsLoading(false);
-				setFetchError(
-					'hubo un error con enviando tu mensaje, prueba otra vez o escribenos por whastapp o directamente a nuestro email de contacto'
-				);
-			});
+			body: formValuesJSON
+		});
+
+		if (res.ok) {
+			return router.push('/success');
+		} else {
+			setIsLoading(false);
+			setFetchError(
+				'hubo un error con enviando tu mensaje, prueba otra vez o escribenos por whastapp o directamente a nuestro email de contacto'
+			);
+		}
 	};
 
 	const handleRecaptcha = () => {
@@ -56,31 +59,20 @@ const ContactForm = ({ cars = [] }) => {
 		}
 	};
 
-	useEffect(() => {
-		return () => {
-			if (isLoading) setIsLoading(false);
-			if (fetchError) setFetchError(null);
-			reset();
-		};
-	}, [fetchError, isLoading, reset]);
-
 	return (
 		<Container>
-			{fetchError && <ErrorTextBlock />}
 			<article className='contact-form'>
 				<h3>contáctanos</h3>
 				<form onSubmit={handleSubmit(onSubmit)}>
-					<input type='hidden' name='bot-field' />
-					<input type='hidden' name='form-name' value='loki' />
 					<div className='form-group'>
 						<input
 							className='form-control'
 							type='text'
 							placeholder='nombre'
-							name='name'
 							{...register('name', { required: true })}
 						/>
-						{errors.user && <p className='error'>Campo obligatorio</p>}
+						{errors.name && <p className='error'>Campo obligatorio</p>}
+
 						<input
 							className='form-control'
 							type='email'
@@ -105,9 +97,9 @@ const ContactForm = ({ cars = [] }) => {
 							name='message'
 							{...register('message', { required: true })}
 						/>
-						{showCapatchaError && (
+						{/* {showCapatchaError && (
 							<p className='error mt-1'>Captcha es obligatorio</p>
-						)}
+						)} */}
 						{errors.message && <p className='error'>Campo obligatorio</p>}
 
 						{/* // TODO: get a re captcha for container page */}
@@ -120,9 +112,11 @@ const ContactForm = ({ cars = [] }) => {
 								/>
 							</div>
 						</div> */}
+
+						{fetchError && <ErrorTextBlock />}
 					</div>
 
-					<button className='btn submit-btn' disabled={isLoading}>
+					<button type='submit' className='btn submit-btn'>
 						{isLoading ? 'Enviando...' : 'Enviar'}
 					</button>
 				</form>
