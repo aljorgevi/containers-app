@@ -25,7 +25,7 @@ export default function Contacto() {
 }
 const Wrapper = styled.section`
 	width: 100%;
-	height: calc(100vh - 10.5rem);
+	height: 100vh;
 	position: relative;
 
 	.info {
@@ -36,10 +36,6 @@ const Wrapper = styled.section`
 		height: 100%;
 		display: grid;
 		place-items: center;
-		background: linear-gradient(
-			to right,
-			rgba(39, 39, 39, 0.9),
-			rgba(39, 39, 39, 0.3)
-		);
+		background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3));
 	}
 `;

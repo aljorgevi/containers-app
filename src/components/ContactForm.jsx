@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
-import PropTypes from 'prop-types';
-import { useForm } from 'react-hook-form';
-import styled from 'styled-components';
-import { useRouter } from 'next/router';
-import ReCAPTCHA from 'react-google-recaptcha';
-import { repatchaKey } from '../config/google';
-import { ErrorTextBlock } from './UI/ErrorTextBlock/ErrorTextBlock';
+import { useRef, useState } from "react";
+import PropTypes from "prop-types";
+import { useForm } from "react-hook-form";
+import styled from "styled-components";
+import { useRouter } from "next/router";
+import ReCAPTCHA from "react-google-recaptcha";
+import { repatchaKey } from "../config/google";
+import { ErrorTextBlock } from "./UI/ErrorTextBlock/ErrorTextBlock";
 
 const ContactForm = () => {
 	const router = useRouter();
@@ -14,7 +14,6 @@ const ContactForm = () => {
 		register,
 		handleSubmit,
 		formState: { errors },
-		reset
 	} = useForm();
 
 	const captchaRef = useRef(null);
@@ -37,18 +36,18 @@ const ContactForm = () => {
 
 		const formValuesJSON = JSON.stringify(values);
 
-		const res = await fetch('/api/mail', {
-			method: 'post',
-			headers: { 'Content-Type': 'application/json' },
-			body: formValuesJSON
+		const res = await fetch("/api/mail", {
+			method: "post",
+			headers: { "Content-Type": "application/json" },
+			body: formValuesJSON,
 		});
 
 		if (res.ok) {
-			return router.push('/success');
+			return router.push("/success");
 		} else {
 			setIsLoading(false);
 			setFetchError(
-				'hubo un error con enviando tu mensaje, prueba otra vez o escribenos por whastapp o directamente a nuestro email de contacto'
+				"hubo un error con enviando tu mensaje, prueba otra vez o escribenos por whastapp o directamente a nuestro email de contacto"
 			);
 		}
 	};
@@ -61,46 +60,46 @@ const ContactForm = () => {
 
 	return (
 		<Container>
-			<article className='contact-form'>
+			<article className="contact-form">
 				<h3>contáctanos</h3>
 				<form onSubmit={handleSubmit(onSubmit)}>
-					<div className='form-group'>
+					<div className="form-group">
 						<input
-							className='form-control'
-							type='text'
-							placeholder='nombre'
-							{...register('name', { required: true })}
+							className="form-control"
+							type="text"
+							placeholder="nombre"
+							{...register("name", { required: true })}
 						/>
-						{errors.name && <p className='error'>Campo obligatorio</p>}
+						{errors.name && <p className="error">Campo obligatorio</p>}
 
 						<input
-							className='form-control'
-							type='email'
-							placeholder='email'
-							name='email'
-							{...register('email', { required: true })}
+							className="form-control"
+							type="email"
+							placeholder="email"
+							name="email"
+							{...register("email", { required: true })}
 						/>
-						{errors.email && <p className='error'>Campo obligatorio</p>}
+						{errors.email && <p className="error">Campo obligatorio</p>}
 						<input
-							className='form-control'
-							type='text'
-							placeholder='telefono'
-							name='phone'
-							{...register('phone', { required: true })}
+							className="form-control"
+							type="text"
+							placeholder="telefono"
+							name="phone"
+							{...register("phone", { required: true })}
 						/>
-						{errors.phone && <p className='error'>Campo obligatorio</p>}
+						{errors.phone && <p className="error">Campo obligatorio</p>}
 
 						<textarea
-							className='form-control'
-							type='text'
-							placeholder='Indíquenos tu consulta y te contactaremos lo antes posible.'
-							name='message'
-							{...register('message', { required: true })}
+							className="form-control"
+							type="text"
+							placeholder="Indíquenos tu consulta y te contactaremos lo antes posible."
+							name="message"
+							{...register("message", { required: true })}
 						/>
 						{/* {showCapatchaError && (
 							<p className='error mt-1'>Captcha es obligatorio</p>
 						)} */}
-						{errors.message && <p className='error'>Campo obligatorio</p>}
+						{errors.message && <p className="error">Campo obligatorio</p>}
 
 						{/* // TODO: get a re captcha for container page */}
 						{/* <div className='g-wrapper'>
@@ -116,8 +115,8 @@ const ContactForm = () => {
 						{fetchError && <ErrorTextBlock />}
 					</div>
 
-					<button type='submit' className='btn submit-btn'>
-						{isLoading ? 'Enviando...' : 'Enviar'}
+					<button type="submit" className="btn submit-btn">
+						{isLoading ? "Enviando..." : "Enviar"}
 					</button>
 				</form>
 			</article>
@@ -126,7 +125,7 @@ const ContactForm = () => {
 };
 
 ContactForm.propTypes = {
-	cars: PropTypes.array.isRequired
+	cars: PropTypes.array.isRequired,
 };
 
 const Container = styled.div`

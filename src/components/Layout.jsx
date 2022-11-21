@@ -4,6 +4,7 @@ import Footer from './Footer';
 // import { pageAnimation3 } from "../utils/animations"
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
+import WhatsappIcon from './WhatsappIcon';
 
 const Layout = ({ children }) => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +23,7 @@ const Layout = ({ children }) => {
 			>
 				{children}
 			</main>
+			<WhatsappIcon />
 			<Footer />
 		</>
 	);
