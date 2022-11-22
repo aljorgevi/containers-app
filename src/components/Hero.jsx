@@ -13,6 +13,11 @@ export default function Hero({ images }) {
 	};
 
 	useEffect(() => {
+		images.forEach(obj => {
+			const img = new Image();
+			img.src = obj.url;
+		});
+
 		const timer = setTimeout(() => {
 			if (slide === images.length - 1) return setSlide(0);
 

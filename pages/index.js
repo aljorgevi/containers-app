@@ -6,6 +6,7 @@ import Layout from "../src/components/Layout";
 import Hero from "../src/components/Hero";
 
 export default function Home({ images }) {
+	console.log("🚀 ~ file: index.js ~ line 9 ~ Home ~ images", { images });
 	return (
 		<>
 			<Layout>
@@ -20,16 +21,12 @@ export async function getStaticProps() {
 
 	const images = res.items.map(img => {
 		const { sys, fields } = img;
-		const { image, title, subTitle } = fields;
+		const { image } = fields;
 		const { fields: imgFields } = image;
 
 		return {
 			url: imgFields.file.url,
 			id: sys.id,
-			title,
-			subTitle,
-			description: "asdasdasda",
-			res,
 		};
 	});
 
