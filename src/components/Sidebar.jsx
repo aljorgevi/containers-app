@@ -1,5 +1,8 @@
-import styled from "styled-components";
+import PropTypes from "prop-types";
+
 import { FaTimes } from "react-icons/fa";
+import styled from "styled-components";
+
 import SocialLinks from "./SocialLinks";
 import Links from "./Links";
 
@@ -22,3 +25,8 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 const Wrapper = styled.aside``;
 
 export default Sidebar;
+
+Sidebar.propTypes = {
+	isOpen: PropTypes.bool.isRequired,
+	toggleSidebar: PropTypes.func.isRequired,
+};
