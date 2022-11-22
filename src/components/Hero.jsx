@@ -38,7 +38,7 @@ export default function Hero({ images }) {
 				/> */}
 				<div
 					style={{
-						backgroundImage: `url(${images[slide].url}) `,
+						backgroundImage: `url(${images[slide].url})`,
 						backgroundPosition: "center",
 						backgroundSize: "cover",
 						height: "100%",
