@@ -1,9 +1,13 @@
-import { useEffect, useState } from 'react';
-import styles from '../../styles/Hero.module.css';
+import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+
+import styles from "../../styles/Hero.module.css";
+// import Image from "next/image";
 
 export default function Hero({ images }) {
 	const [slide, setSlide] = useState(0);
 
+	// eslint-disable-next-line no-unused-vars
 	const goToNext = index => {
 		setSlide(index);
 	};
@@ -21,22 +25,27 @@ export default function Hero({ images }) {
 	return (
 		<section className={styles.Hero}>
 			<div className={styles.HeroContainer}>
+				{/* <Image
+					src={`https:${images[slide].url}`}
+					alt={images[slide].alt}
+					layout="fill"
+					objectFit="cover"
+				/> */}
 				<div
 					style={{
-						backgroundImage: `url(${images[slide].url})`,
-						backgroundPosition: 'center',
-						backgroundSize: 'cover',
-						height: '100%'
+						backgroundImage: `url(${images[slide].url}) `,
+						backgroundPosition: "center",
+						backgroundSize: "cover",
+						height: "100%",
+						objectFit: "cover",
 					}}
 				></div>
 				<div>
 					{/* <div className={styles.HeroDescripion}>
-						<span className={styles.HeroDescripionTitle}>
-							{images[slide].title}
-						</span>
-					</div> */}
-					{/* <div className={styles.HeroCarousel}>
-					{images.map((img, index) => {
+						<span className={styles.HeroDescripionTitle}>{images[slide].title}</span>
+					</div>
+					<div className={styles.HeroCarousel}>
+						{images.map((img, index) => {
 							return <span key={img.id} onClick={() => goToNext(index)}></span>;
 						})}
 					</div> */}
@@ -45,3 +54,7 @@ export default function Hero({ images }) {
 		</section>
 	);
 }
+
+Hero.propTypes = {
+	images: PropTypes.array.isRequired,
+};
