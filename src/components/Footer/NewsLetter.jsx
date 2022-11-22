@@ -1,21 +1,21 @@
-import styled from 'styled-components';
-import TextField from '@mui/material/TextField';
-import CustomButton from '../UI/Button/Button';
+import styled from "styled-components";
+import TextField from "@mui/material/TextField";
+import CustomButton from "../UI/Button/Button";
 
 export default function NewsLetter() {
 	return (
 		<Wrapper>
 			{/* TODO: change secondary theme to white */}
 			<TextField
-				sx={{ input: { color: 'white' } }}
-				className='input-sub'
-				color='secondary'
-				id='outlined-basic'
-				label='Email'
-				variant='outlined'
+				sx={{ input: { color: "white" } }}
+				className="input-sub"
+				color="secondary"
+				id="outlined-basic"
+				label="Email"
+				variant="outlined"
 				focused
 			/>
-			<CustomButton className='btn-sub'>Suscribirme!</CustomButton>
+			<CustomButton className="btn-sub">Suscribirme!</CustomButton>
 		</Wrapper>
 	);
 }

@@ -1,16 +1,16 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
 	palette: {
-		primary: { main: '#ffda1f' },
+		primary: { main: "#ffda1f" },
 		secondary: {
-			main: '#fff'
+			main: "#fff",
 		},
 		info: {
-			main: '#3a3a3a'
+			main: "#3a3a3a",
 		},
 		multilineColor: {
-			color: 'red'
-		}
-	}
+			color: "red",
+		},
+	},
 });

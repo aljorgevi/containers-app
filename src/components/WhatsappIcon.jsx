@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import { FaWhatsapp } from 'react-icons/fa';
+import styled from "styled-components";
+import { FaWhatsapp } from "react-icons/fa";
 
 const WhatsappIcon = () => {
 	return (
-		<Container target='_blank' href='https://wa.link/5zvjjw'>
-			<FaWhatsapp className='wsp-icon' />
+		<Container target="_blank" href="https://wa.link/5zvjjw">
+			<FaWhatsapp className="wsp-icon" />
 		</Container>
 	);
 };

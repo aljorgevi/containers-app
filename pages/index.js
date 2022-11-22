@@ -1,6 +1,9 @@
-import Layout from '../src/components/Layout';
-import Hero from '../src/components/Hero';
-import { client } from '../src/config/contenful';
+import PropTypes from "prop-types";
+
+import { client } from "../src/config/contenful";
+
+import Layout from "../src/components/Layout";
+import Hero from "../src/components/Hero";
 
 export default function Home({ images }) {
 	return (
@@ -13,7 +16,7 @@ export default function Home({ images }) {
 }
 
 export async function getStaticProps() {
-	const res = await client.getEntries({ content_type: 'containers' });
+	const res = await client.getEntries({ content_type: "containers" });
 
 	const images = res.items.map(img => {
 		const { sys, fields } = img;
@@ -25,10 +28,14 @@ export async function getStaticProps() {
 			id: sys.id,
 			title,
 			subTitle,
-			description: 'asdasdasda',
-			res
+			description: "asdasdasda",
+			res,
 		};
 	});
 
 	return { props: { images } };
 }
+
+Home.propTypes = {
+	images: PropTypes.array.isRequired,
+};

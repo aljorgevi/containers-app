@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import { socialLinks } from '../constants';
+import PropTypes from "prop-types";
+import { socialLinks } from "../constants";
 
 const SocialLinks = ({ className }) => {
 	return (
@@ -22,5 +22,5 @@ const SocialLinks = ({ className }) => {
 export default SocialLinks;
 
 SocialLinks.propTypes = {
-	className: PropTypes.string
+	className: PropTypes.string,
 };

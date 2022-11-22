@@ -1,10 +1,11 @@
+// eslint-disable-next-line no-unused-vars
 import { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import { useRouter } from "next/router";
-import ReCAPTCHA from "react-google-recaptcha";
-import { repatchaKey } from "../config/google";
+// import ReCAPTCHA from "react-google-recaptcha";
+// import { repatchaKey } from "../config/google";
 import { ErrorTextBlock } from "./UI/ErrorTextBlock/ErrorTextBlock";
 
 const ContactForm = () => {
@@ -16,8 +17,8 @@ const ContactForm = () => {
 		formState: { errors },
 	} = useForm();
 
-	const captchaRef = useRef(null);
-	const [showCapatchaError, setShowCapatchaError] = useState(false);
+	// const captchaRef = useRef(null);
+	// const [showCapatchaError, setShowCapatchaError] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 	const [fetchError, setFetchError] = useState(null);
 
@@ -32,7 +33,7 @@ const ContactForm = () => {
 		// 	return;
 		// }]
 
-		setShowCapatchaError(false);
+		// setShowCapatchaError(false);
 
 		const formValuesJSON = JSON.stringify(values);
 
@@ -52,11 +53,11 @@ const ContactForm = () => {
 		}
 	};
 
-	const handleRecaptcha = () => {
-		if (captchaRef.current.getValue()) {
-			setShowCapatchaError(false);
-		}
-	};
+	// const handleRecaptcha = () => {
+	// 	if (captchaRef.current.getValue()) {
+	// 		setShowCapatchaError(false);
+	// 	}
+	// };
 
 	return (
 		<Container>

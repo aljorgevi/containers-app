@@ -1,24 +1,25 @@
-import { PrismaClient } from '@prisma/client';
-import { sendGrindApiKey } from '../../src/config/mail';
-const mail = require('@sendgrid/mail');
+import { PrismaClient } from "@prisma/client";
+import { sendGrindApiKey } from "../../src/config/mail";
+const mail = require("@sendgrid/mail");
 
 mail.setApiKey(sendGrindApiKey);
 const prisma = new PrismaClient();
 
+// eslint-disable-next-line no-extend-native
 BigInt.prototype.toJSON = function () {
 	return this.toString();
 };
 
 export default async function handler(req, res) {
-	if (req.method === 'POST') {
+	if (req.method === "POST") {
 		const [userResponse, mailResponse] = await Promise.all([
 			addUser(req, res),
-			sendEmail(req, res)
+			sendEmail(req, res),
 		]);
 
-		console.log('📢 ______RESPONSE_USER_AND_MAIL______  📢', {
+		console.log("📢 ______RESPONSE_USER_AND_MAIL______  📢", {
 			userResponse,
-			mailResponse
+			mailResponse,
 		});
 
 		if (userResponse?.ok && mailResponse?.ok) {
@@ -26,12 +27,10 @@ export default async function handler(req, res) {
 		} else {
 			return res.status(405).json({ ok: false });
 		}
-	} else if (req.method === 'GET') {
+	} else if (req.method === "GET") {
 		return await readUsers(req, res);
 	} else {
-		return res
-			.status(405)
-			.json({ message: 'Method not allowed', success: false });
+		return res.status(405).json({ message: "Method not allowed", success: false });
 	}
 }
 
@@ -40,27 +39,27 @@ async function readUsers(req, res) {
 		const allUsers = await prisma.user.findMany();
 		return res.status(200).json(allUsers, { success: true });
 	} catch (error) {
-		console.error('Request error', error);
-		res.status(500).json({ error: 'Error with db', success: false });
+		console.error("Request error", error);
+		res.status(500).json({ error: "Error with db", success: false });
 	}
 }
 
 async function addUser(req, response) {
 	try {
 		const body = req.body;
-		//TODO: user is the name of the model but lowerCase
+		// TODO: user is the name of the model but lowerCase
 		const res = await prisma.user.create({
 			data: {
 				name: body.name,
-				email: body.email
-			}
+				email: body.email,
+			},
 		});
-		console.log('db response 🧨', { res });
+		console.log("db response 🧨", { res });
 		// return response.status(200).json({ ok: true });
 		return { ok: true };
 	} catch (error) {
 		// TODO: where this log go? vercel logs?
-		console.log('db error 🧨', { error });
+		console.log("db error 🧨", { error });
 		return { ok: false };
 	}
 }
@@ -81,20 +80,20 @@ async function sendEmail(req, response) {
 		// to: "jormencar@yahoo.com",
 		// to: 'contact@aljorgevi.com',
 		const data = {
-			to: 'contacto@lokicars.cl',
-			from: 'contacto@lokicars.cl',
+			to: "contacto@lokicars.cl",
+			from: "contacto@lokicars.cl",
 			subject: `nuevo mensaje desde containers.cl!`,
 			text: payload,
-			html: payload.replace(/\r\n/g, '<br>')
+			html: payload.replace(/\r\n/g, "<br>"),
 		};
 
 		const res = await mail.send(data);
-		console.log('email response 🚀', { res });
+		console.log("email response 🚀", { res });
 
 		// return response.status(200).json({ ok: true });
 		return { ok: true };
 	} catch (error) {
-		console.log('email error 🚀', { error });
+		console.log("email error 🚀", { error });
 		return { ok: false };
 	}
 }
