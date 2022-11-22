@@ -4,8 +4,8 @@
 	box-sizing: border-box;
 }
 /* fonts */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300&display=swap");
 
 :root {
 	/* colors */
@@ -42,8 +42,8 @@
 
 	/* fonts  */
 	--defaultFontSize: 87.5%;
-	--headingFont: 'Montserrat', sans-serif;
-	--bodyFont: 'Open Sans', sans-serif;
+	--headingFont: "Montserrat", sans-serif;
+	--bodyFont: "Open Sans", sans-serif;
 	--smallText: 0.7em;
 	/* rest of the vars */
 	--backgroundColor: var(--grey-50);
@@ -55,17 +55,12 @@
 	--fixed-width: 600px;
 
 	/* box shadow*/
-	--shadow-light: rgb(0 0 0 / 69%) 0px 25px 30px -10px,
-		rgb(0 0 0 / 73%) 0px 16px 10px -10px;
-	--shadow-dark: rgb(0 0 0 / 80%) 0px 40px 57px -16px,
-		rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+	--shadow-light: rgb(0 0 0 / 69%) 0px 25px 30px -10px, rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+	--shadow-dark: rgb(0 0 0 / 80%) 0px 40px 57px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
 	--shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-	--shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-		0 2px 4px -1px rgba(0, 0, 0, 0.06);
-	--shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-		0 4px 6px -2px rgba(0, 0, 0, 0.05);
-	--shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-		0 10px 10px -5px rgba(0, 0, 0, 0.04);
+	--shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	--shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	--shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 html {
@@ -677,7 +672,7 @@ Pages
 	border: 1px solid var(--primary-600);
 	box-sizing: border-box;
 	color: var(--black);
-	font-family: 'Avenir Next LT W01 Bold', sans-serif;
+	font-family: "Avenir Next LT W01 Bold", sans-serif;
 	font-size: 16px;
 	font-weight: 700;
 	line-height: 24px;
@@ -702,7 +697,7 @@ Pages
 
 .button-51:before {
 	background-color: var(--primary-10);
-	content: '';
+	content: "";
 	height: calc(100% + 3px);
 	position: absolute;
 	right: -7px;
