@@ -8,6 +8,7 @@ import logo from "../../public/logo-removebg-preview.png";
 import styles from "../../styles/Navbar.module.css";
 
 const Navbar = ({ toggleSidebar }) => {
+	//
 	return (
 		<div className="section-center navbar">
 			<nav className={styles.Navbar}>
